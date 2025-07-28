@@ -17,7 +17,7 @@ const StyledNav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem 2rem;
+  padding: 1.2rem 1.5rem;
   background: linear-gradient(90deg, #e0e7ff 0%, #f0f0f0 100%);
   box-shadow: 0 2px 12px rgba(60, 60, 120, 0.08);
   border-radius: 0.8rem;
@@ -99,14 +99,18 @@ const StyledNavLink = styled(NavLink)`
 
 function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const closeMenu = () => setIsMenuOpen(false);
   return (
     <StyledNav>
       <h1>Applyft</h1>
       <Hamburger onClick={() => setIsMenuOpen(!isMenuOpen)}>☰</Hamburger>
       <Menu $isOpen={isMenuOpen}>
-        <StyledNavLink to="/about">About</StyledNavLink>
-        <StyledNavLink to="/users">Users</StyledNavLink>
+        <StyledNavLink to="/about" onClick={closeMenu}>
+          About
+        </StyledNavLink>
+        <StyledNavLink to="/users" onClick={closeMenu}>
+          Users
+        </StyledNavLink>
       </Menu>
     </StyledNav>
   );
