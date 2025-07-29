@@ -8,11 +8,7 @@ import type { User } from '../usersSlice';
 interface UseFilteredUsersReturn {
   users: User[];
   loading: boolean;
-  error: string | null;
-  query: string;
   setQuery: (query: string) => void;
-  totalCount: number;
-  filteredCount: number;
 }
 
 function useFilteredUsers(): UseFilteredUsersReturn {
@@ -53,11 +49,7 @@ function useFilteredUsers(): UseFilteredUsersReturn {
   return {
     users: filteredUsers,
     loading,
-    error,
-    query,
     setQuery: handleSetQuery,
-    totalCount: users.length,
-    filteredCount: filteredUsers.length,
   };
 };
 
