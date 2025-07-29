@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { Wrapper } from "./styles";
 import Input from "../../../../components/Input/Input";
 
@@ -8,7 +8,6 @@ interface SearchUserProps {
 
 function SearchUser({ onSearch }: SearchUserProps) {
   const [query, setQuery] = useState("");
-  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
@@ -18,7 +17,6 @@ function SearchUser({ onSearch }: SearchUserProps) {
   return (
     <Wrapper>
       <Input
-        ref={inputRef}
         type="text"
         placeholder="Search users..."
         value={query}

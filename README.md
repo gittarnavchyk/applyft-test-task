@@ -134,7 +134,7 @@ npm run lint:fix     # Fix ESLint issues automatically
 
 ## 🌐 API Integration
 
-The application fetches user data from **[JSONPlaceholder](https://jsonplaceholder.typicode.com/)** API:
+The application fetches user data from **[dummyjson](https://dummyjson.com/)** API:
 
 - User data: `/users` endpoint
 - Includes user details, contact information, and profile images
