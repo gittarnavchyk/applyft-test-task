@@ -15,25 +15,14 @@ function SearchUser({ onSearch }: SearchUserProps) {
     onSearch(e.target.value);
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    // Clear search on Escape
-    if (e.key === "Escape") {
-      setQuery("");
-      onSearch("");
-      inputRef.current?.blur();
-    }
-  };
-
   return (
     <Wrapper>
       <Input
         ref={inputRef}
         type="text"
-        placeholder="Search users... (Press Escape to clear)"
+        placeholder="Search users..."
         value={query}
         onChange={handleChange}
-        onKeyDown={handleKeyDown}
-        autoComplete="off"
         aria-label="Search users by name, username, or email"
       />
     </Wrapper>

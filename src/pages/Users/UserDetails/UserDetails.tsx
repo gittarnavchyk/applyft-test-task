@@ -13,6 +13,7 @@ function UserDetailsPage() {
   const dispatch = useDispatch<AppDispatch>();
   const { users, loading } = useSelector((state: RootState) => state.users);
   const ref = useRef<HTMLButtonElement>(null!);
+
   useEffect(() => {
     if (!users.length && !loading) {
       dispatch(fetchUsers());
@@ -27,7 +28,7 @@ function UserDetailsPage() {
     return <LoadingSpinner />;
   }
 
-  const user = users.find((u) => u.id === Number(id));
+  const user = users.find((user) => user.id === Number(id));
   if (!user) return <NotFound />;
 
   return (

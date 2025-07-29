@@ -17,9 +17,4 @@ export const StyledInput = styled.input`
     box-shadow: 0 2px 8px rgba(60, 60, 120, 0.08);
     background: #fff;
   }
-
-  &:focus-visible {
-    outline: 3px solid #fbbf24;
-    outline-offset: 2px;
-  }
 `;

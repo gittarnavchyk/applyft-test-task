@@ -1,69 +1,140 @@
-# React + TypeScript + Vite
+# Applyft Test Task
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🚀 Live Demo
 
-Currently, two official plugins are available:
+**[View Live Application](https://applyft-test-task.vercel.app/)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📋 Project Overview
 
-## Expanding the ESLint configuration
+This is a responsive user management application that allows users to browse, search, and view detailed information about users. The app features a clean, modern design with full accessibility support.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tech Stack
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Core Technologies
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- **React 19.1.0** - Latest React with concurrent features
+- **TypeScript** - Type-safe development
+- **Vite** - Fast build tool and development server
+- **Redux Toolkit** - State management with RTK Query
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Styling & UI
+
+- **Styled Components** - CSS-in-JS with theme support
+- **React Router DOM** - Client-side routing
+- **React Toastify** - Notification system
+
+### Development Tools
+
+- **ESLint** - Code linting with TypeScript support
+- **Prettier** - Code formatting
+- **Vercel** - Deployment platform
+
+## 📁 Project Structure
+
+```
+src/
+├── app/                    # Redux store configuration
+│   └── store.ts
+├── components/             # Reusable UI components
+│   ├── Input/
+│   │   ├── styles.ts      # Styled components
+│   │   └── Input.tsx      # Component logic
+│   ├── NavBar/
+│   │   ├── styles.ts
+│   │   └── NavBar.tsx
+│   ├── Spinner/
+│   │   ├── styles.ts
+│   │   └── Spinner.tsx
+│   └── Input.tsx
+├── features/               # Feature-based modules
+│   └── users/
+│       ├── components/     # User-specific components
+│       │   ├── SearchUser/
+│       │   ├── UserCard/
+│       │   ├── UserDetails/
+│       │   └── UsersList/
+│       ├── hooks/          # Custom hooks
+│       │   └── useFilteredUsers.ts
+│       └── usersSlice.ts   # Redux slice
+├── pages/                  # Page components
+│   ├── About/
+│   │   ├── styles.ts
+│   │   └── About.tsx
+│   ├── NotFound/
+│   │   ├── styles.ts
+│   │   └── NotFound.tsx
+│   └── Users/
+│       ├── Users.tsx
+│       └── UserDetails/
+├── styles/                 # Global styles
+│   └── globalStyles.ts
+├── App.tsx                 # Root component
+└── main.tsx               # Application entry point
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Architecture Patterns
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Feature-based organization**: Related components grouped by domain
+- **Separated concerns**: Styles extracted to dedicated files
+- **Redux Toolkit**: Centralized state management with type safety
+- **Component composition**: Modular and reusable components
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Quick Setup & Run
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/gittarnavchyk/applyft-test-task.git
+   cd applyft-test-task
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Start development server**
+
+   ```bash
+   npm run dev
+   ```
+
+   The application will be available at `http://localhost:5173`
+
+### Available Scripts
+
+```bash
+# Development
+npm run dev          # Start development server with HMR
+
+# Building
+npm run build        # Build for production
+npm run preview      # Preview production build locally
+
+# Code Quality
+npm run lint         # Run ESLint
+npm run lint:fix     # Fix ESLint issues automatically
 ```
+
+## Accessibility Features
+
+- **Focus indicators**: 3:1 contrast ratio borders
+- **ARIA labels**: Comprehensive screen reader support
+- **Keyboard navigation**: Full keyboard accessibility
+- **Semantic HTML**: Proper landmark and role usage
+- **Responsive design**: Mobile-first approach
+
+## 🌐 API Integration
+
+The application fetches user data from **[JSONPlaceholder](https://jsonplaceholder.typicode.com/)** API:
+
+- User data: `/users` endpoint
+- Includes user details, contact information, and profile images

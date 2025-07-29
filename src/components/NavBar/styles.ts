@@ -82,6 +82,7 @@ export const StyledNavLink = styled(NavLink)`
   }
 
   &:focus-visible {
+    transition: none;
     outline: 3px solid #fbbf24;
     outline-offset: 2px;
   }
