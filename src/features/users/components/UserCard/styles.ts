@@ -5,13 +5,15 @@ export const StyledCard = styled.div`
   padding: 1.2rem 1.5rem;
   border-radius: 0.8rem;
   background: #fff;
+  border: 2px solid #6b7280;
   box-shadow: 0 2px 12px rgba(60, 60, 120, 0.12);
-  transition: box-shadow 0.2s, transform 0.2s;
+  transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
   margin-bottom: 1rem;
 
   &:hover {
     box-shadow: 0 8px 32px rgba(60, 60, 120, 0.2);
     transform: translateY(-2px) scale(1.02);
+    border-color: #4b5563;
   }
 `;
 
@@ -65,7 +67,7 @@ export const DetailsButton = styled(Link)`
   }
 
   &:focus-visible {
-    outline: 2px solid #4f46e5;
+    outline: 3px solid #fbbf24;
     outline-offset: 2px;
   }
 `;

@@ -10,13 +10,15 @@ function UsersList({ users }: UsersListProps) {
   return (
     <>
       {users.length ? (
-        <StyledUsers>
+        <StyledUsers role="list" aria-label={`${users.length} users found`}>
           {users.map((user) => (
             <UserCard key={user.id} user={user} />
           ))}
         </StyledUsers>
       ) : (
-        <NoUsersMessage>No users found</NoUsersMessage>
+        <NoUsersMessage role="status" aria-live="polite">
+          No users found
+        </NoUsersMessage>
       )}
     </>
   );

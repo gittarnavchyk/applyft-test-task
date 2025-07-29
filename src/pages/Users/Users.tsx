@@ -1,5 +1,5 @@
 import useFilteredUsers from "../../features/users/hooks/useFilteredUsers";
-import LoadingSpinner from "../../components/Spinner";
+import LoadingSpinner from "../../components/Spinner/Spinner";
 import Users from "../../features/users/components/UsersList/UsersList";
 import SearchUser from "../../features/users/components/SearchUser/SearchUser";
 

@@ -1,22 +1,31 @@
-import { StyledDetails, InfoItem, Label, Value } from "./styles";
+import {
+  StyledDetails,
+  Title,
+  Avatar,
+  InfoContainer,
+  BackButton,
+  InfoItem,
+  Label,
+  Value,
+} from "./styles";
 import type { User } from "../../usersSlice";
 
 interface UserDetailsProps {
+  ref?: React.RefObject<HTMLButtonElement>;
   user: User;
   onBack: () => void;
 }
 
-function UserDetails({ user, onBack }: UserDetailsProps) {
+function UserDetails({ ref, user, onBack }: UserDetailsProps) {
   return (
     <StyledDetails>
-      <h2>User Details</h2>
-      <img
+      <Title>User Details</Title>
+      <Avatar
         src={user.image}
         alt={`${user.firstName} ${user.lastName}`}
-        className="avatar"
         loading="lazy"
       />
-      <div className="info">
+      <InfoContainer>
         <InfoItem>
           <Label>First Name:</Label>
           <Value>{user.firstName}</Value>
@@ -41,8 +50,10 @@ function UserDetails({ user, onBack }: UserDetailsProps) {
           <Label>Age:</Label>
           <Value>{user.age}</Value>
         </InfoItem>
-      </div>
-      <button onClick={onBack}>← Back to Users</button>
+      </InfoContainer>
+      <BackButton ref={ref} onClick={onBack} aria-label="Go back to users list">
+        ← Back to Users
+      </BackButton>
     </StyledDetails>
   );
 }

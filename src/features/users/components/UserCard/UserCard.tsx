@@ -15,10 +15,10 @@ interface UserCardProps {
 
 function UserCard({ user }: UserCardProps) {
   return (
-    <StyledCard>
+    <StyledCard role="listitem">
       <TopContent>
-        <Avatar 
-          src={user.image} 
+        <Avatar
+          src={user.image}
           alt={`${user.firstName} ${user.lastName}`}
           loading="lazy"
         />
@@ -29,7 +29,12 @@ function UserCard({ user }: UserCardProps) {
         </Info>
       </TopContent>
       <ButtonContainer>
-        <DetailsButton to={`/users/${user.id}`}>View Details</DetailsButton>
+        <DetailsButton
+          to={`/users/${user.id}`}
+          aria-label={`View details for ${user.firstName} ${user.lastName}`}
+        >
+          View Details
+        </DetailsButton>
       </ButtonContainer>
     </StyledCard>
   );

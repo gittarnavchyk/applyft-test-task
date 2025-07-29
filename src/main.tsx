@@ -1,27 +1,10 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { createGlobalStyle } from "styled-components";
 import { Provider } from "react-redux";
 import "react-toastify/dist/ReactToastify.css";
 import App from "./App.tsx";
 import { store } from "./app/store.ts";
-
-const GlobalStyle = createGlobalStyle`
-  html {
-    scrollbar-gutter: stable;
-  }
-
-  body {
-    font-family: Arial, sans-serif;
-    max-width: 1200px;
-    margin: 20px auto 0;
-    scrollbar-gutter: stable;
-  }
-
-  #root {
-    margin: 20px 20px 30px 20px;
-  }
-`;
+import { GlobalStyle } from "./styles/globalStyles.ts";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

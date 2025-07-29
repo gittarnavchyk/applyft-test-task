@@ -1,21 +1,33 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const StyledNotFound = styled.div`
+export const StyledNotFound = styled.div`
   padding: 2rem;
   text-align: center;
   max-width: 600px;
   margin: 2.5rem auto;
 `;
 
-const NavLinks = styled.div`
+export const Title = styled.h2`
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+  color: #333;
+`;
+
+export const Message = styled.p`
+  margin: 0 0 2rem 0;
+  font-size: 1rem;
+  color: #666;
+`;
+
+export const NavLinks = styled.div`
   display: flex;
   gap: 1rem;
   justify-content: center;
   margin-top: 2rem;
 `;
 
-const StyledLink = styled(Link)`
+export const StyledLink = styled(Link)`
   padding: 0.4rem 1rem;
   background: #4f46e5;
   color: white;
@@ -28,19 +40,9 @@ const StyledLink = styled(Link)`
   &:hover {
     background: #3730a3;
   }
+
+  &:focus-visible {
+    outline: 3px solid #fbbf24;
+    outline-offset: 2px;
+  }
 `;
-
-function NotFoundPage() {
-  return (
-    <StyledNotFound>
-      <h2>404 - Page Not Found</h2>
-      <p>The page you are looking for does not exist.</p>
-      <NavLinks>
-        <StyledLink to="/about">Go to About</StyledLink>
-        <StyledLink to="/users">Go to Users</StyledLink>
-      </NavLinks>
-    </StyledNotFound>
-  );
-}
-
-export default NotFoundPage;

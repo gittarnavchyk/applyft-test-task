@@ -17,7 +17,7 @@ function useFilteredUsers(): UseFilteredUsersReturn {
   const [query, setQuery] = useState('');
 
   useEffect(() => {
-    if (users.length === 0 && !loading) {
+    if (!users.length && !loading) {
       dispatch(fetchUsers());
     }
   }, [dispatch, users.length, loading]);

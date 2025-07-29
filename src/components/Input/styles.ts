@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-const StyledInput = styled.input`
+export const StyledInput = styled.input`
   width: 100%;
   padding: 0.8rem 1rem;
-  border: 1px solid #e0e7ff;
+  border: 2px solid #6b7280;
   border-radius: 0.5rem;
   background: #f6f7fb;
   font-size: 1rem;
@@ -17,10 +17,9 @@ const StyledInput = styled.input`
     box-shadow: 0 2px 8px rgba(60, 60, 120, 0.08);
     background: #fff;
   }
+
+  &:focus-visible {
+    outline: 3px solid #fbbf24;
+    outline-offset: 2px;
+  }
 `;
-
-function Input(props: React.InputHTMLAttributes<HTMLInputElement>) {
-  return <StyledInput {...props} />;
-}
-
-export default Input;

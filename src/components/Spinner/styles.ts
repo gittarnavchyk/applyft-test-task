@@ -1,14 +1,13 @@
-import type { JSX } from "react";
 import styled from "styled-components";
 
-const SpinnerWrapper = styled.div`
+export const SpinnerWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 60vh;
 `;
 
-const Spinner = styled.div`
+export const SpinnerElement = styled.div`
   border: 4px solid #f3f3f3;
   border-top: 4px solid #3498db;
   border-radius: 50%;
@@ -26,12 +25,10 @@ const Spinner = styled.div`
   }
 `;
 
-function LoadingSpinner(): JSX.Element {
-  return (
-    <SpinnerWrapper>
-      <Spinner />
-    </SpinnerWrapper>
-  );
-}
-
-export default LoadingSpinner;
+export const ScreenReaderText = styled.span`
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+`;
