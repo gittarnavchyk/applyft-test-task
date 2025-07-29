@@ -19,7 +19,9 @@ function UserDetailsPage() {
     }
   }, [dispatch, loading, users.length]);
 
-  if (loading) return <LoadingSpinner />;
+  if (loading || users.length === 0) {
+    return <LoadingSpinner />;
+  }
 
   const user = users.find((u) => u.id === Number(id));
   if (!user) return <NotFound />;
