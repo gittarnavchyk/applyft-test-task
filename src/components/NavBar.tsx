@@ -26,6 +26,14 @@ const StyledNav = styled.nav`
     flex-direction: column;
     align-items: stretch;
     padding: 1rem;
+
+    .nav-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
   }
 
   h1 {
@@ -102,8 +110,10 @@ function NavBar() {
   const closeMenu = () => setIsMenuOpen(false);
   return (
     <StyledNav>
-      <h1>Applyft</h1>
-      <Hamburger onClick={() => setIsMenuOpen(!isMenuOpen)}>☰</Hamburger>
+      <div className="nav-header">
+        <h1>Applyft</h1>
+        <Hamburger onClick={() => setIsMenuOpen(!isMenuOpen)}>☰</Hamburger>
+      </div>
       <Menu $isOpen={isMenuOpen}>
         <StyledNavLink to="/about" onClick={closeMenu}>
           About

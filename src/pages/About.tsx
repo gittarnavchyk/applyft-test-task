@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledAbout = styled.div`
-  padding: 2.5rem;
+  padding: 2rem;
   max-width: 1200px;
   margin: 2.5rem auto;
   background: #fff;
@@ -13,6 +13,7 @@ const StyledAbout = styled.div`
     font-weight: 700;
     color: #2d2d6a;
     margin-bottom: 1.5rem;
+    margin-top: 0;
     letter-spacing: 1px;
   }
 

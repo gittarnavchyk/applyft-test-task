@@ -8,11 +8,10 @@ const Wrapper = styled.div`
 `;
 
 interface SearchUserProps {
-  loading: boolean;
   onSearch: (query: string) => void;
 }
 
-function SearchUser({ loading, onSearch }: SearchUserProps) {
+function SearchUser({ onSearch }: SearchUserProps) {
   const [query, setQuery] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,7 +25,6 @@ function SearchUser({ loading, onSearch }: SearchUserProps) {
         type="text"
         placeholder="Search users..."
         value={query}
-        disabled={loading}
         onChange={handleChange}
         autoComplete="off"
       />

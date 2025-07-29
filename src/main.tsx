@@ -6,10 +6,15 @@ import { Provider } from "react-redux";
 import { store } from "./app/store.ts";
 
 const GlobalStyle = createGlobalStyle`
+  html {
+    scrollbar-gutter: stable;
+  }
+
   body {
     font-family: Arial, sans-serif;
     max-width: 1200px;
     margin: 20px auto 0;
+    scrollbar-gutter: stable;
 
     @media (max-width: 1200px) {
       display: block;
