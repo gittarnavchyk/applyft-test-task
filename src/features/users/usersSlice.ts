@@ -23,14 +23,12 @@ export interface UsersState {
   users: User[];
   loading: boolean;
   error: string | null;
-  isInitialized: boolean;
 }
 
 const initialState: UsersState = {
   users: [],
   loading: false,
   error: null,
-  isInitialized: false,
 };
 
 export const fetchUsers = createAsyncThunk<UsersResponse>(
@@ -56,7 +54,6 @@ const usersSlice = createSlice({
       .addCase(fetchUsers.fulfilled, (state, action: PayloadAction<UsersResponse>) => {
         state.loading = false;
         state.users = action.payload.users;
-        state.isInitialized = true;
       })
       .addCase(fetchUsers.rejected, (state, action) => {
         state.loading = false;
