@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import LoadingSpinner from "../../../components/Spinner";
 import NotFound from "../../NotFound";
 import type { RootState, AppDispatch } from "../../../app/store";
-import { UserDetailsView } from "../../../features/users/components/UserDetails/UserDetailsView";
+import UserDetails from "../../../features/users/components/UserDetails";
 import { fetchUsers } from "../../../features/users/usersSlice";
 import { useEffect } from "react";
 
@@ -24,7 +24,7 @@ function UserDetailsPage() {
   const user = users.find((u) => u.id === Number(id));
   if (!user) return <NotFound />;
 
-  return <UserDetailsView user={user} onBack={() => navigate("/users")} />;
+  return <UserDetails user={user} onBack={() => navigate("/users")} />;
 }
 
 export default UserDetailsPage;

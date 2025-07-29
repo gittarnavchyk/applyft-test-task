@@ -1,8 +1,7 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
-import type { User } from "../usersSlice";
+import { Link } from "react-router-dom";
 
-const StyledCard = styled.div`
+export const StyledCard = styled.div`
   padding: 1.2rem 1.5rem;
   border-radius: 0.8rem;
   background: #fff;
@@ -16,7 +15,7 @@ const StyledCard = styled.div`
   }
 `;
 
-const TopContent = styled.div`
+export const TopContent = styled.div`
   display: flex;
   align-items: center;
   gap: 1.2rem;
@@ -25,7 +24,7 @@ const TopContent = styled.div`
   border-bottom: 1px solid #e0e7ff;
 `;
 
-const Avatar = styled.img`
+export const Avatar = styled.img`
   width: 56px;
   height: 56px;
   border-radius: 50%;
@@ -35,23 +34,23 @@ const Avatar = styled.img`
   loading: lazy;
 `;
 
-const Info = styled.div`
+export const Info = styled.div`
   flex: 1;
 `;
 
-const Name = styled.p`
+export const Name = styled.p`
   font-size: 1.15rem;
   font-weight: 600;
   color: #2d2d6a;
   margin: 0;
 `;
 
-const ButtonContainer = styled.div`
+export const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
 `;
 
-const DetailsButton = styled(Link)`
+export const DetailsButton = styled(Link)`
   display: inline-block;
   padding: 0.4rem 1rem;
   background: #4f46e5;
@@ -71,27 +70,3 @@ const DetailsButton = styled(Link)`
     outline-offset: 2px;
   }
 `;
-
-interface UserCardProps {
-  user: User;
-}
-
-function UserCard({ user }: UserCardProps) {
-  return (
-    <StyledCard>
-      <TopContent>
-        <Avatar src={user.image} alt={`${user.firstName} ${user.lastName}`} />
-        <Info>
-          <Name>
-            {user.firstName} {user.lastName}
-          </Name>
-        </Info>
-      </TopContent>
-      <ButtonContainer>
-        <DetailsButton to={`/users/${user.id}`}>View Details</DetailsButton>
-      </ButtonContainer>
-    </StyledCard>
-  );
-}
-
-export default UserCard;

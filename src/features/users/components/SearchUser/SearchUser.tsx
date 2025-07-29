@@ -1,11 +1,6 @@
 import { useState } from "react";
-import styled from "styled-components";
-import Input from "../../../components/Input";
-
-const Wrapper = styled.div`
-  margin-bottom: 2rem;
-  max-width: calc(100% - 2rem);
-`;
+import { Wrapper } from "./styles";
+import Input from "../../../../components/Input";
 
 interface SearchUserProps {
   onSearch: (query: string) => void;
