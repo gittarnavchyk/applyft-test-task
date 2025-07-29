@@ -31,13 +31,12 @@ const initialState: UsersState = {
   error: null,
 };
 
-export const fetchUsers = createAsyncThunk<UsersResponse, string>(
+export const fetchUsers = createAsyncThunk<UsersResponse>(
   'users/fetchUsers',
-  async (query) => {
+  async () => {
     // Simulating a delay for demonstration purposes
     await new Promise((resolve) => setTimeout(resolve, 1200));
-    const url = "https://dummyjson.com/users";
-    const response = await axios.get<UsersResponse>(query ? `${url}/search?q=${query}` : url);
+    const response = await axios.get<UsersResponse>("https://dummyjson.com/users");
     return response.data;
   }
 );

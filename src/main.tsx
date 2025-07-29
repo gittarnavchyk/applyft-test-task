@@ -15,11 +15,10 @@ const GlobalStyle = createGlobalStyle`
     max-width: 1200px;
     margin: 20px auto 0;
     scrollbar-gutter: stable;
+  }
 
-    @media (max-width: 1200px) {
-      display: block;
-      margin: 20px 20px 30px 20px;
-    }
+  #root {
+    margin: 20px 20px 30px 20px;
   }
 `;
 

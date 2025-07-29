@@ -5,15 +5,16 @@ import usersReducer from '../features/users/usersSlice'
 export const store = configureStore({
   reducer: {
     users: usersReducer,
-  }
-})
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
+});
 
-// Infer the type of `store`
 export type AppStore = typeof store
-export type RootState = ReturnType<AppStore['getState']>
-// Infer the `AppDispatch` type from the store itself
-export type AppDispatch = AppStore['dispatch']
-// Define a reusable type describing thunk functions
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
 export type AppThunk<ThunkReturnType = void> = ThunkAction<
   ThunkReturnType,
   RootState,

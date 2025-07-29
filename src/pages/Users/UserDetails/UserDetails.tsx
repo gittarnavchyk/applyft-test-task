@@ -1,14 +1,24 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import LoadingSpinner from "../../../components/Spinner";
 import NotFound from "../../NotFound";
-import type { RootState } from "../../../app/store";
+import type { RootState, AppDispatch } from "../../../app/store";
 import { UserDetailsView } from "../../../features/users/components/UserDetails/UserDetailsView";
+import { fetchUsers } from "../../../features/users/usersSlice";
+import { useEffect } from "react";
 
 function UserDetailsPage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const dispatch = useDispatch<AppDispatch>();
   const { users, loading } = useSelector((state: RootState) => state.users);
+
+  useEffect(() => {
+    // Only fetch if we don't have users and we're not currently loading
+    if (users.length === 0 && !loading) {
+      dispatch(fetchUsers());
+    }
+  }, [dispatch]); // dispatch is stable and won't cause re-renders
 
   if (loading) return <LoadingSpinner />;
 

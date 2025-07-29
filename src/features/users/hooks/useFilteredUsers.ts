@@ -9,15 +9,14 @@ export const useFilteredUsers = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { users, loading, error } = useSelector((state: RootState) => state.users);
   const [query, setQuery] = useState('');
-	const hasFetched = useRef(false);
+  const hasFetched = useRef(false);
 
-  // Fetch users only once if empty
-	useEffect(() => {
-		if (users.length === 0 && !hasFetched.current) {
-				hasFetched.current = true;
-				dispatch(fetchUsers(''));
-		}
-	}, [dispatch, users.length]);
+  useEffect(() => {
+    if (users.length === 0 && !hasFetched.current) {
+      hasFetched.current = true;
+      dispatch(fetchUsers());
+    }
+  }, [dispatch, users.length]);
 
   // Filter users locally
   const filteredUsers = useMemo(() => {
