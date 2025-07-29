@@ -1,5 +1,5 @@
 import type { User } from "../../usersSlice";
-import UserCard from "../UserCard";
+import UserCard from "../UserCard/UserCard";
 import { StyledUsers, NoUsersMessage } from "./styles";
 
 interface UsersListProps {

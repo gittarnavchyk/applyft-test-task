@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import LoadingSpinner from "../../../components/Spinner";
 import NotFound from "../../NotFound";
 import type { RootState, AppDispatch } from "../../../app/store";
-import UserDetails from "../../../features/users/components/UserDetails";
+import UserDetails from "../../../features/users/components/UserDetails/UserDetails";
 import { fetchUsers } from "../../../features/users/usersSlice";
 import { useEffect } from "react";
 

@@ -15,7 +15,7 @@ interface UseFilteredUsersReturn {
   filteredCount: number;
 }
 
-export const useFilteredUsers = (): UseFilteredUsersReturn => {
+function useFilteredUsers(): UseFilteredUsersReturn {
   const dispatch = useDispatch<AppDispatch>();
   const { users, loading, error } = useSelector((state: RootState) => state.users);
   const [query, setQuery] = useState('');
@@ -60,3 +60,5 @@ export const useFilteredUsers = (): UseFilteredUsersReturn => {
     filteredCount: filteredUsers.length,
   };
 };
+
+export default useFilteredUsers;

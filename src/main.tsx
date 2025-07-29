@@ -1,8 +1,9 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App.tsx";
 import { createGlobalStyle } from "styled-components";
 import { Provider } from "react-redux";
+import "react-toastify/dist/ReactToastify.css";
+import App from "./App.tsx";
 import { store } from "./app/store.ts";
 
 const GlobalStyle = createGlobalStyle`

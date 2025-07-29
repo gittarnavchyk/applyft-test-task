@@ -31,7 +31,6 @@ export const Avatar = styled.img`
   object-fit: cover;
   box-shadow: 0 2px 12px rgba(60, 60, 120, 0.15);
   border: 2px solid #e0e7ff;
-  loading: lazy;
 `;
 
 export const Info = styled.div`

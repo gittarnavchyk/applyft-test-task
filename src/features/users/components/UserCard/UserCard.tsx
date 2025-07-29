@@ -17,7 +17,11 @@ function UserCard({ user }: UserCardProps) {
   return (
     <StyledCard>
       <TopContent>
-        <Avatar src={user.image} alt={`${user.firstName} ${user.lastName}`} />
+        <Avatar 
+          src={user.image} 
+          alt={`${user.firstName} ${user.lastName}`}
+          loading="lazy"
+        />
         <Info>
           <Name>
             {user.firstName} {user.lastName}

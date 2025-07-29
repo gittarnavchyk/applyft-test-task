@@ -1,7 +1,7 @@
-import { useFilteredUsers } from "../../features/users/hooks/useFilteredUsers";
+import useFilteredUsers from "../../features/users/hooks/useFilteredUsers";
 import LoadingSpinner from "../../components/Spinner";
-import Users from "../../features/users/components/UsersList";
-import SearchUser from "../../features/users/components/SearchUser";
+import Users from "../../features/users/components/UsersList/UsersList";
+import SearchUser from "../../features/users/components/SearchUser/SearchUser";
 
 function UsersPage() {
   const { users, loading, setQuery } = useFilteredUsers();

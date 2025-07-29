@@ -14,6 +14,7 @@ function UserDetails({ user, onBack }: UserDetailsProps) {
         src={user.image}
         alt={`${user.firstName} ${user.lastName}`}
         className="avatar"
+        loading="lazy"
       />
       <div className="info">
         <InfoItem>
