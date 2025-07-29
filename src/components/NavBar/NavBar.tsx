@@ -29,14 +29,14 @@ function NavBar() {
         <StyledNavLink
           to="/about"
           onClick={() => setIsMenuOpen(false)}
-          aria-label="About this application"
+          aria-label="Open about page"
         >
           About
         </StyledNavLink>
         <StyledNavLink
           to="/users"
           onClick={() => setIsMenuOpen(false)}
-          aria-label="View all users"
+          aria-label="Open user list"
         >
           Users
         </StyledNavLink>
