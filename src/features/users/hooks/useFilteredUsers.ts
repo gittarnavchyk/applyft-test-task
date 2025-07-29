@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useRef } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchUsers } from '../usersSlice';
 import type { RootState, AppDispatch } from '../../../app/store';
@@ -9,11 +9,9 @@ export const useFilteredUsers = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { users, loading, error } = useSelector((state: RootState) => state.users);
   const [query, setQuery] = useState('');
-  const hasFetched = useRef(false);
 
   useEffect(() => {
-    if (users.length === 0 && !hasFetched.current) {
-      hasFetched.current = true;
+    if (users.length === 0 ) {
       dispatch(fetchUsers());
     }
   }, [dispatch, users.length]);

@@ -14,11 +14,10 @@ function UserDetailsPage() {
   const { users, loading } = useSelector((state: RootState) => state.users);
 
   useEffect(() => {
-    // Only fetch if we don't have users and we're not currently loading
     if (users.length === 0 && !loading) {
       dispatch(fetchUsers());
     }
-  }, [dispatch]); // dispatch is stable and won't cause re-renders
+  }, [dispatch, loading, users.length]);
 
   if (loading) return <LoadingSpinner />;
 
